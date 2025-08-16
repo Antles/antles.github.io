@@ -1,0 +1,91 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Super Widget XL"
+                style="@style/TextAppearance.InventoryApp.CardTitle"/>
+
+            <TextView
+                android:id="@+id/text_item_description_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="A very fine widget indeed, now extra large!"
+                style="@style/TextAppearance.InventoryApp.CardSubtitle"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_item_sku"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:layout_marginStart="8dp"
+            tools:text="SKU12345-XL"
+            style="@style/TextAppearance.InventoryApp.CardSubtitle"/>
+
+        <TextView
+            android:id="@+id/text_item_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            tools:text="100"
+            style="@style/TextAppearance.InventoryApp.CardTitle"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:orientation="horizontal"
+            android:gravity="end|center_vertical"
+            android:layout_marginStart="8dp">
+
+            <!-- Button to edit quantity/details. Could open ItemDetailScreen or an inline editor -->
+            <ImageButton
+                android:id="@+id/button_edit_item"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@android:drawable/ic_menu_edit"
+                app:tint="?attr/colorPrimary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/edit_item_button_content_description"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageButton
+                android:id="@+id/button_delete_item"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@android:drawable/ic_menu_delete"
+                app:tint="@color/red_500"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/delete_item_button_content_description"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
