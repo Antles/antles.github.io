@@ -1,34 +1,26 @@
 # Stage 1: Build the React application
 FROM node:20-alpine AS builder
 
-# Set the working directory
 WORKDIR /app
-
-# Copy package.json and package-lock.json (or yarn.lock, etc.)
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
-
-# Copy the rest of the application source code
 COPY . .
-
-# Build the application for production
 RUN npm run build
 
 # Stage 2: Serve the application using Nginx
-# Use a lightweight Nginx image
 FROM nginx:1.25-alpine
 
-# Copy the built static files from the builder stage to the Nginx public directory
+# Install gettext, which provides the 'envsubst' utility
+RUN apk add --no-cache gettext
+
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy the custom Nginx configuration file
-# This is crucial for routing API requests and serving the React app correctly.
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy the Nginx configuration TEMPLATE. We'll process it before starting.
+COPY nginx.conf /etc/nginx/templates/default.conf.template
 
 # Expose port 80
 EXPOSE 80
 
-# The default Nginx command will start the server
-CMD ["nginx", "-g", "daemon off;"]
+# The command to run when the container starts.
+# This will substitute environment variables in our config and then start Nginx.
+CMD ["/bin/sh", "-c", "envsubst '$backend_url' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
