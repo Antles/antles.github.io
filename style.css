@@ -137,3 +137,17 @@ footer {
     background: #2c3e50;
     color: #ecf0f1;
 }
+
+.hero-banner {
+    background-color: #3498db;
+    /* A nice blue color */
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.hero-banner h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
