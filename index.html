@@ -1,14 +1,309 @@
+<!-- File: index.html (Your single-page portfolio) -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Austin Antles - Computer Science Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Antles Github Page</h1>
+    <main class="container">
+        <!-- Section 1: Professional Self-Assessment -->
+        <section id="self-assessment">
+            <h2>Professional Self-Assessment</h2>
+            <p>
+                <!-- Paste your full Professional Self-Assessment narrative here. -->
+                Welcome to my ePortfolio. My journey through the Computer Science program has been one of tremendous
+                growth,
+                shaping my professional goals and preparing me to enter the software engineering field...
+            </p>
+        </section>
+
+        <!-- Section 2: Capstone Project -->
+        <section id="project">
+            <h2>Capstone: Full-Stack Inventory Management Application</h2>
+            <p>This project showcases a comprehensive re-engineering of a monolithic Android application into a modern,
+                secure, and scalable full-stack web service. The original artifact was enhanced across three key
+                computer science categories.</p>
+
+            <h3>Code Review Video</h3>
+            <div class="video-container">
+                <!-- Replace with your video's embed code from YouTube or Vimeo -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jDA8imW8VLI"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h3>Artifacts & Narratives</h3>
+
+            <p><strong>Original Artifact:</strong> A monolithic Android app. <a
+                    href="https://github.com/Antles/antles.github.io/tree/main/Software%20Enhancement/Antles_Option_12"
+                    class="button">View Original Code on GitHub</a></p>
+
+            <div class="enhancement-card">
+                <h4>Enhancement 1: Software Design and Engineering</h4>
+                <p><strong>Narrative:</strong></p>
+                <h4>1. Artifact Description</h4>
+                <p>
+                    The original artifact I am enhancing is a native Android application for inventory management, which
+                    I created for my CS 360: Mobile Architecture and Programming course. The application was developed
+                    using Java and Android's native UI toolkit with XML layouts. It functions as a self-contained,
+                    single-user tool, where all application components — user interface, business logic, and data
+                    storage via a local SQLite database — are bundled together in a monolithic architecture. It allows a
+                    user to create an account, log in, and perform all four CRUD (Create, Read, Update, Delete)
+                    operations on inventory items stored directly on the device.
+                </p>
+
+                <h4>2. Justification for Inclusion and Enhancement</h4>
+                <p>
+                    I selected this artifact for my ePortfolio because it serves as a perfect "before" picture,
+                    representing a familiar and well-understood software architecture (the monolith) that is functional
+                    but has apparent, demonstrable limitations. Its primary weakness is its structure; being a
+                    self-contained unit, it cannot support multiple users, cannot be accessed from different platforms
+                    (like the web), and is not scalable. This makes it an ideal candidate for a significant and
+                    practical enhancement that showcases a wide range of modern software engineering skills.
+                </p>
+                <p>
+                    The specific components that showcase my skills and abilities are found in the enhancement itself.
+                    The artifact was improved by completely re-engineering its backend architecture. I have decomposed
+                    the monolith into a modern client-server model by creating a robust, standalone backend service
+                    using the Go programming language (Golang). This new API now serves as the central authority for all
+                    business logic and data manipulation. The Go code demonstrates my ability to:
+                </p>
+                <ul>
+                    <li>Structure a professional web service with a clear separation of concerns (main entry point,
+                        database logic, request handlers).</li>
+                    <li>Handle HTTP requests and responses, process JSON data, and interact with a database securely and
+                        efficiently.</li>
+                    <li>Implement a clean RESTful API with logical endpoints for all CRUD operations.</li>
+                </ul>
+                <p>
+                    This enhancement demonstrates my ability to analyze an existing system, identify its architectural
+                    flaws, and design a superior solution utilizing industry-standard practices and modern tools.
+                </p>
+
+                <h4>3. Course Outcome Alignment</h4>
+                <p>
+                    This enhancement directly aligns with the course outcomes I planned to achieve in Module One. There
+                    are no updates to my outcome-coverage plan.
+                </p>
+                <blockquote>
+                    <p><strong>Design and evaluate computing solutions that solve a given problem using algorithmic
+                            principles and computer science practices and standards appropriate to its solution, while
+                            managing the trade-offs involved in design choices.</strong> My enhancement is a direct
+                        demonstration of this outcome. I evaluated the original monolithic design and identified its
+                        trade-offs (simplicity vs. lack of scalability). I then designed a new client-server solution
+                        that aligns with current computer science practices and standards. This new architecture
+                        addresses the original problem of inventory management in a scalable, accessible, and secure
+                        manner for multiple users.</p>
+                    <p><strong>Demonstrate an ability to use well-founded and innovative techniques, skills, and tools
+                            in computing practices to implement computer solutions that deliver value and accomplish
+                            industry-specific goals:</strong> By choosing to build the backend in Go, I am using a
+                        well-founded and modern tool that is highly sought after in the tech industry for its
+                        performance and concurrency. The technique of building a RESTful API to serve a decoupled
+                        frontend is the foundation of most modern web services. This enhancement delivers immense value
+                        by transforming a single-user mobile utility into a platform-agnostic service capable of
+                        supporting a real business.</p>
+                </blockquote>
+
+                <h4>4. Reflection on the Process</h4>
+                <p>
+                    The process of enhancing this artifact was an incredibly valuable learning experience that forced me
+                    to shift my entire development perspective. The most significant challenge was transitioning from
+                    the mindset of a mobile developer, where everything exists in a single, contained environment, to
+                    that of a backend developer, where you are building a stateless service that must be secure,
+                    efficient, and reliable. Learning to structure a Go application, managing dependencies with go mod,
+                    and setting up a router for handling API endpoints was a steep but rewarding learning curve.
+                </p>
+                <p>
+                    What I learned most profoundly was the importance of defining a clear API contract before writing
+                    the bulk of the logic. Deciding precisely what each endpoint would be (/api/v1/items,
+                    /api/v1/items/{id), what HTTP method it would use (GET, POST, PUT), and what the JSON structure for
+                    requests and responses would look like was a critical planning step. This made the actual coding of
+                    the handler functions much more straightforward because I had a clear blueprint to follow. Another
+                    major challenge was correctly setting up the PostgreSQL database and managing user permissions. I
+                    faced several "permission denied" errors. Overcoming this taught me that database security isn't
+                    just about the application code; it extends to proper administration of the database server itself.
+                    This process solidified my understanding of how different parts of a complex software system
+                    communicate and has given me a much stronger foundation in software architecture and design that I
+                    will carry with me into my career.
+                </p>
+                <p><strong>Enhanced Artifact:</strong> A client-server architecture with a Go backend API.</p>
+                <a href="https://github.com/Antles/antles.github.io/tree/main/Software%20Enhancement"
+                    class="button">View Enhanced Project on GitHub</a>
+            </div>
+
+            <div class="enhancement-card">
+                <h4>Enhancement 2: Algorithms and Data Structures</h4>
+                <p><strong>Narrative:</strong></p>
+                <h4>1. Artifact Description</h4>
+                <p>
+                    The original artifact I am enhancing is the data retrieval logic from my Android inventory
+                    management application, created in CS 360. In its initial form, the application's approach to data
+                    structures and algorithms was rudimentary. The primary data operation was a single, inflexible
+                    method, getAllInventoryItems, which executed a hardcoded SELECT * SQL query. The result was loaded
+                    into a Java ArrayList, a basic linear data structure. This meant that to display or find any
+                    information, the entire dataset had to be loaded into the client device's memory first, with no
+                    efficient means of searching or sorting provided by the backend logic.
+                </p>
+
+                <h4>2. Justification for Inclusion and Enhancement</h4>
+                <p>
+                    I selected this artifact because its initial implementation represents a common but inefficient
+                    approach to data handling that is not scalable. It provides a clear opportunity to demonstrate my
+                    understanding of algorithmic efficiency and the importance of server-side data processing. The
+                    original method's O(n) complexity for any search operation (where 'n' represents the total number of
+                    items) and its high memory usage make it a prime candidate for significant algorithmic enhancement.
+                </p>
+                <p>
+                    The artifact was improved by implementing a sophisticated, server-side dynamic search and sorting
+                    algorithm within the Go backend. This new algorithm, exposed via the /api/v1/items/search endpoint,
+                    showcases several key skills:
+                </p>
+                <ul>
+                    <li><strong>Algorithmic Design:</strong> The core of the enhancement is the searchItemsHandler
+                        function. This algorithm intelligently constructs a SQL query string by dynamically appending
+                        WHERE and ORDER BY clauses based on optional user-provided parameters. This is a far more
+                        complex and efficient approach than fetching all the data at once.</li>
+                    <li><strong>Data Structure Manipulation:</strong> The algorithm uses a slice of interfaces
+                        ([]interface{}) to collect and pass parameters to the database driver safely. This technique is
+                        crucial for creating secure prepared statements and preventing SQL injection vulnerabilities.
+                    </li>
+                    <li><strong>Efficiency and Scalability:</strong> By offloading the work of filtering and sorting to
+                        the PostgreSQL database engine (which can use indexes for searches closer to O(log n)
+                        complexity), the algorithm ensures that the client application remains fast and responsive,
+                        regardless of the size of the inventory.</li>
+                </ul>
+
+                <h4>3. Course Outcome Alignment</h4>
+                <p>
+                    This enhancement directly meets the course outcome I planned in Module One:
+                </p>
+                <blockquote>
+                    <p><strong>Design and evaluate computing solutions that solve a given problem using algorithmic
+                            principles and computer science practices and standards appropriate to its solution, while
+                            managing the trade-offs involved in design choices.</strong> This enhancement is a direct
+                        application of the algorithmic tenets to solve the problem of efficiently finding specific data
+                        within a large dataset. I evaluated the original client-side iteration approach and identified
+                        its poor performance as a key trade-off. My new server-side algorithm is a standard computer
+                        science practice that strikes the correct balance: it increases backend complexity in exchange
+                        for a significant improvement in client-side performance, network efficiency, and overall
+                        application scalability.</p>
+                </blockquote>
+
+                <h4>4. Reflection on the Process</h4>
+                <p>
+                    Enhancing this artifact was a challenging and highly educational process that moved me from simply
+                    retrieving data to intelligently processing it. The biggest challenge was determining how to
+                    construct a SQL query dynamically in a manner that was both flexible and secure. My initial thought
+                    was to use simple string concatenation to build the entire query, but I quickly learned through
+                    research that this method is wide open to SQL injection attacks.
+                </p>
+                <p>
+                    The key thing I learned was the importance of prepared statements and how to use them with a dynamic
+                    number of parameters. The solution was to build the query structure with placeholders (such as $1,
+                    $2) and separately create a list (a slice in Go) of the actual values. This separation ensures that
+                    user input is treated as data, not as executable code, which was a significant "aha!" moment for me
+                    in understanding backend security. I also faced the challenge of handling multiple optional
+                    parameters gracefully. The series of if statements in my searchItemsHandler, which checks if a
+                    parameter exists before adding it to the query and the arguments list, is a direct result of that
+                    challenge. This process taught me that designing a good algorithm isn't just about the logic; it's
+                    also about anticipating edge cases and writing defensive, secure code.
+                </p>
+                <a href="https://github.com/Antles/antles.github.io/tree/main/Algo%20Enhancement" class="button">View
+                    Enhanced Project on GitHub</a>
+            </div>
+
+            <div class="enhancement-card">
+                <h4>Enhancement 3: Databases</h4>
+                <p><strong>Narrative:</strong></p>
+                <h4>1. Artifact Description</h4>
+                <p>
+                    The original artifact I am enhancing is the database component of my Android inventory management
+                    application, which was created for my CS 360: Mobile Architecture and Programming course. A local,
+                    file-based SQLite database handled the application's data persistence. This database was embedded
+                    within the application itself, meaning each installation had its own isolated data file. The schema
+                    was simple, and critically, it stored user passwords in plain text, representing a significant
+                    security flaw. This approach, while functional for a single-user offline prototype, is fundamentally
+                    unsuitable for a real-world system that requires data integrity, security, and shared access.
+                </p>
+
+                <h4>2. Justification for Inclusion and Enhancement</h4>
+                <p>
+                    I selected this artifact because its database implementation provides a clear and compelling
+                    opportunity to demonstrate growth in two critical areas: database architecture and security. The
+                    migration from SQLite to a server-based system showcases my understanding of scalable data
+                    solutions, but the most important enhancement is the implementation of proper security practices.
+                </p>
+                <p>
+                    The artifact was improved by migrating the data layer to PostgreSQL and, more significantly, by
+                    implementing a secure user authentication system. The specific components that showcase my skills
+                    and abilities are:
+                </p>
+                <ul>
+                    <li><strong>Database Schema Enhancement:</strong> I designed and created a new users table in
+                        PostgreSQL with appropriate constraints, including a UNIQUE constraint on the username to ensure
+                        data integrity.</li>
+                    <li><strong>Secure Password Storage:</strong> The core of this enhancement is in the auth.go and
+                        auth_handlers.go files. I implemented functions to securely hash user passwords using the
+                        industry-standard bcrypt algorithm before storing them. The HashPassword function creates a
+                        secure hash, and the CheckPasswordHash function provides a safe way to verify a login attempt
+                        without ever exposing the original password. This demonstrates a proactive security mindset.
+                    </li>
+                    <li><strong>Authentication Logic:</strong> I built API endpoints for user registration and login
+                        that correctly handle the flow of data, from validating user input to interacting with the
+                        database and securely comparing password hashes.</li>
+                </ul>
+
+                <h4>3. Course Outcome Alignment</h4>
+                <p>
+                    This enhancement directly aligns with the course outcome I planned to achieve in Module One. There
+                    are no updates to my outcome-coverage plan.
+                </p>
+                <blockquote>
+                    <p><strong>Develop a security mindset that anticipates adversarial exploits in software architecture
+                            and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy
+                            and enhanced security of data and resources.</strong> This outcome is the primary focus of
+                        my enhancement. I identified the critical vulnerability of storing plain-text passwords in the
+                        original artifact. I then mitigated this design flaw completely by implementing bcrypt hashing.
+                        This directly anticipates a common adversarial exploit (a database breach) and ensures that even
+                        if the data were compromised, user passwords would remain secure and private, thus protecting
+                        user data.</p>
+                </blockquote>
+
+                <h4>4. Reflection on the Process</h4>
+                <p>
+                    The process of implementing this enhancement was incredibly insightful and solidified my
+                    understanding of backend security. The biggest challenge was not just learning how to use the bcrypt
+                    library, but understanding why it is so important. It forced me to think like an adversary and
+                    consider the potential consequences of a data breach. This shifted my perspective from just "making
+                    login work" to "building a secure authentication system."
+                </p>
+                <p>
+                    One of the key things I learned was the practical difference between encoding, encryption, and
+                    one-way hashing. I now understand that hashing is the correct tool for password security because you
+                    should never need to decrypt a password, only verify it. I also faced the challenge of structuring
+                    the new authentication code in a clean and efficient manner. My solution was to create separate
+                    auth.go and auth_handlers.go files. This separated the pure cryptographic utility functions (such as
+                    HashPassword) from the HTTP request handling logic (such as RegisterHandler). This separation of
+                    concerns made the code much cleaner, easier to read, and more maintainable. This process has
+                    fundamentally changed how I will approach any feature involving user data in the future; security
+                    will no longer be an afterthought but a foundational requirement from the very beginning of the
+                    design process.
+                </p>
+                <a href="https://github.com/Antles/antles.github.io/tree/main/Database%20Enhancement"
+                    class="button">View Enhanced Project on GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Austin Antles</p>
+    </footer>
 </body>
 
 </html>
